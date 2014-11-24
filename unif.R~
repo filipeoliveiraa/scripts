@@ -1,0 +1,7 @@
+
+unifmean <- function(n,m,a) {
+  data <- c(1:n)
+  for(i in 1:n){
+    data[i] <- mean(runif(m)*a)
+  }
+}

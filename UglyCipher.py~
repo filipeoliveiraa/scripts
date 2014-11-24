@@ -1,0 +1,26 @@
+class UglyCipher:
+    def july(self, word, key):
+        chars = []
+        for line in word:
+            chars.extend(line)
+
+        for i in range(len(chars)):
+            chars[i] = chr(ord(chars[i]) + key)
+
+        return chars.join('')
+
+    def reverse(self, word):
+        return word[::-1]
+
+    def rnd_split(self, word, c):
+        return word.split(c)
+
+    def mod_sort(self, words, a):
+        for i in range(len(words)):
+            words[i] = words[(i+a)%len(words)]
+            
+        return words
+
+    def buildCipher(self,source, key, c, a):
+        return self.mod_sort(self.rnd_split(self.reverse(self.july(source, key)), c), a)
+
